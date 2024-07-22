@@ -1,0 +1,51 @@
+
+    <section class="course">
+    <div class="container">
+        <h2 class="text-center " style="font-weight: bold;margin-top: 10px;"> Destinations arround the island </h2>
+    
+        <div class="row mt-2" >
+            <div class="col-xl-3 col-lg-4  col-md-6 col-sm-6  col-xs-12 mb-4" *ngFor="let cs of productSlice">
+                <div class="box shadow-sm">
+                    <img [src]="cs.productImages[0].url" width="90%" height="160px;"  alt=""> 
+                    <h4 style="font-weight: bold;" class="mt-2">{{cs.name}}</h4>
+                    <p clas="mt-2">{{cs.price}}</p>
+                    <button class="btn btn-primary btn-sm mt-2">Watch now</button>
+                </div>
+
+                
+            </div>
+
+            <mat-paginator class="mt-2 mb-5" [length]="lnght"
+            [pageSize]="8" style="font-size: 16px;font-weight: bold;"
+            [pageSizeOptions]="[2,4,8]"
+            (page)="onPageChange($event)"
+            aria-label="Select page">
+            </mat-paginator>
+            
+        </div>
+
+
+
+
+
+    </div>
+</section>
+
+<!--
+<div class="nonResp overflow-scroll" style="background-color: lightgrey;">
+    <mat-grid-list  class="flex-nowrap flex-sm-wrap" cols="4" rowHeight="1:1" gutterSize="20">
+        <mat-grid-tile *ngFor="let p of productSlice">
+            <div class="row home-page-product-image">
+                <div >
+                    <img [src]="p.productImages[0].url" width="210px" height="160px" alt=""> 
+                    <p><br><b>{{p.name}}</b>  -   {{p.price}}</p>  
+                    <button style="background-color: green; color: white; margin-left:200px;" type="button" mat-raised-button  >View</button>                                              
+                </div>
+
+
+
+            </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+</div>
+-->

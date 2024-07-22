@@ -1,0 +1,173 @@
+
+<div>
+    <h2  class="mt-3"  style="font-weight: bold;margin-left:575px;">Create Product</h2>
+</div>
+
+<div class="p1dv1 col-11  mt-4">
+
+    <form class=" form1 col-12 mt-3 "  #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputEmail4">Product Name</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <input type="text" *ngIf="product" [(ngModel)]="product.productName"  class="form-control" name="productName" id="productName"
+                            placeholder="Product Name">
+                        <!--<small>Name is Required</small>-->
+                    </div>
+                </div>
+                <div class="row formRaw">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputDescription">Master Product Type</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <select id="inputDistrict" placeholder="Main Address" [(ngModel)]="masterTypeId" [ngModelOptions]="{standalone: true}" 
+                         class="form-control" (ngModelChange)='onMStProductTypeSelected($event)'>
+                        <option [ngValue]="null" selected> --  Select Master Type ---- </option>
+                        <option *ngFor="let mstTypes of masterTypes" [value]="mstTypes.id">
+                        {{mstTypes.name}}
+                        </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row formRaw">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputDescription">Brand</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <select id="inputDistrict" placeholder="Main Address" *ngIf="product" [(ngModel)]="product.brandId" [ngModelOptions]="{standalone: true}" 
+                         class="form-control" >
+                        <option [ngValue]="null" selected> --  Select Master Type ---- </option>
+                        <option *ngFor="let brand of brands" [value]="brand.id">
+                        {{brand.name}}
+                        </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row formRaw">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputDescription">Description</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <!--<input type="text" *ngIf="product"  [(ngModel)]="product.description" class="form-control" name="description" id="description" placeholder="description">-->
+                        <textarea class="form-control" placeholder="type the description here" name="description" id="description" 
+                        maxlength="500" rows="4" [(ngModel)]="product.description"></textarea>
+                    </div>
+                </div>
+
+                <div class="row formRaw">
+                    <div class="form-group col-6">
+                        <label class="form-check-label" for="gridCheck">
+                            select the main attachment
+                        </label>
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="file"  multiple value="select" #selectFile
+                         (change)="onFileSelectedMain($event)">
+
+                    </div>
+                </div>
+
+                <div class="row formRaw">
+                    <mat-grid-list cols="4" rowHeight="1:1">
+                        <mat-grid-tile  *ngFor="let file of product.mainImage; let i = index;">
+                            <div style="position: relative">
+                                <span class="btn-remove-image" (click)="removeImageMain(i)">X</span>
+                                <img [src]="file.url" width="100px" height="100px" >
+                    
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+
+            </div>
+
+
+            <div class="col-6">
+
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputEmail4">Product Code</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <input type="text" *ngIf="product" [(ngModel)]="product.code"  class="form-control" name="productCode" id="productCode"
+                            placeholder="Product Code">
+                    </div>
+                </div>
+                <div class="row formRaw">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputDescription">Product Type</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <select id="inputDistrict" placeholder="Main Address" *ngIf="product" [(ngModel)]="product.productTypeId" name="productTypeId" [ngModelOptions]="{standalone: true}" 
+                         class="form-control">
+                        <option [ngValue]="null" selected> --  Select Type ---- </option>
+                        <option *ngFor="let prodType of productTypes" [value]="prodType.id">
+                        {{prodType.name}}
+                        </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row formRaw">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputAddress">General Price</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <input type="number" min="5" max="20"   step="0.01" *ngIf="product"   [(ngModel)]="product.productActualPrice" class="form-control" name="actualPrice" id="actualPrice" placeholder="Actual Price">
+                    </div>
+                </div>
+
+                <div class="row formRaw">
+                    <div class="form-group col-6">
+                        <label class="form-check-label" for="gridCheck">
+                            select the other attachements
+                        </label>
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="file"  multiple value="select" #selectFile
+                         (change)="onFileSelected($event)">
+
+                    </div>
+                </div>
+
+                <div class="row formRaw">
+                    <mat-grid-list cols="4" rowHeight="1:1">
+                        <mat-grid-tile  *ngFor="let file of product.productImages; let i = index;">
+                            <div style="position: relative">
+                                <span class="btn-remove-image" (click)="removeImage(i)">X</span>
+                                <img [src]="file.url" width="100px" height="100px" >
+                    
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="row formRaw">
+            <div class="form-group col-4">
+
+            </div>
+            <div class="form-group col-7">
+
+            </div>
+            <div class="form-group col-1">
+               <input type="submit" 
+                value="Create"
+                class="btn btn-primary form-control rounded-0">
+
+            </div>
+        </div>
+
+    </form>
+</div>

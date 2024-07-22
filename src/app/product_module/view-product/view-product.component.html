@@ -1,0 +1,88 @@
+<div>
+    <h2 style="font-weight: bold;">View Product </h2>
+</div>
+
+
+<div class="p1dv1 col-10">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputEmail4">Product Name</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <p>{{product.productName}}</p>
+                    </div>
+                </div>
+
+                <div class="row formRaw">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputDescription">Code</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <p>{{product.code}}</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="col-6">
+
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputEmail4">Product Price</label>
+                    </div>
+                    <div class="form-group col-8">
+                        <p>{{product.productActualPrice}}NZD</p>
+                    </div>
+                </div>
+                <div class="row formRaw">
+                    <div class="form-group col-4">
+                        <label class="inputLable" for="inputDescription">Product Type</label>
+                    </div>
+                    <div class="form-group col-8">
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+        <div class="row">
+            <div class="form-group col-2">
+                <label class="inputLable" for="inputEmail4">Description</label>
+            </div>
+            <div class="form-group col-10">
+                <p>{{product.description}}</p>
+            </div>
+        </div>
+        <div class="row">
+                <div class="card image-container">
+                    <!--<img [src]="product.productImages[0].url" width="120px;" height="160px;"  alt="">-->
+
+
+                    <mat-grid-list cols="4" rowHeight="1:1">
+                        <div>
+                            <mat-grid-tile *ngFor="let img of product.productImages ">
+                                <img [src]="img.url" width="250px" height="275px"  alt="">
+                            </mat-grid-tile>
+                        </div>
+                    </mat-grid-list>
+                </div>
+        </div>
+
+
+
+
+</div>

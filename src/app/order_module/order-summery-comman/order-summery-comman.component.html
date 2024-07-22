@@ -1,0 +1,138 @@
+<div>
+    <h1 class="mt-5"> ORDER SUMMARY </h1>
+
+    <div class="row  mt-3">
+    
+        <div class=" col-md-2 col-s-4">
+          <label class="inputLable" >Delivary Name</label>
+        </div>
+        <div class=" col-md-4 col-s-8 d-flex  align-items-center"  >
+            <input type="text" disabled="true"   [(ngModel)]="delivaryName"   style= "background-color: white;" class="form-control" name="productName2" id="productName2">
+         
+        </div>
+        <div class=" col-md-2 col-s-4">
+          <label class="inputLable" >Ordered Date</label>
+        </div>
+        <div class=" col-md-4 col-s-8">
+          <input type="text" disabled="true"   [(ngModel)]="orderDate"   style= "background-color: white;" class="form-control" name="productName2" id="productName2">
+        </div>
+    
+    
+      </div>
+    
+    
+      <div class="row  mt-3">
+        
+        <div class=" col-md-2 col-s-4">
+          <label class="inputLable" for="inputEmail4">Email</label>
+        </div>
+        <div class=" col-md-4 col-s-8">
+          <input type="text" disabled="true"   [(ngModel)]="email"  style= "background-color: white;" class="form-control" name="productName" id="productName">
+        </div>
+        <div class=" col-md-2 col-s-4">
+          <label class="inputLable" for="inputEmail4">Contact No</label>
+        </div>
+        <div class=" col-md-4 col-s-8">
+          <input type="text" disabled="true"   [(ngModel)]="contactNo" style= "background-color: white;" class="form-control" name="productName" id="productName">
+        </div>
+    
+      </div>
+    
+      <div class="row  mt-3">
+        
+        <div class=" col-md-2 col-s-4">
+          <label class="inputLable" for="inputEmail4">Order Total</label>
+        </div>
+        <div class=" col-md-4 col-s-8">
+          <input type="text" disabled="true"  [(ngModel)]="orderTotal" style= "background-color: white;" class="form-control" name="productName" id="productName">
+        </div>
+        <div class=" col-md-2 col-s-4">
+          <label class="inputLable" for="inputEmail4"> Status</label>
+        </div>
+        <div class=" col-md-4 col-s-8">
+          <input type="text" disabled="true"  [(ngModel)]="status" style= "background-color: white;" class="form-control" name="productName" id="productName">
+        </div>
+    
+      </div>
+    
+      <div class="row mt-3">
+        
+        <div class=" col-md-2 col-s-12">
+          <label class="inputLable" for="inputEmail4">Delivary Address</label>
+        </div>
+        <div class=" col-md-10 col-s-12">
+          <input type="text" disabled="true" [(ngModel)]="delivaryAddress" style= "background-color: white;" class="form-control" name="productName" id="productName">
+        </div>
+    
+      </div>
+    
+    
+      <div class="row mt-3">
+        
+        <div class=" col-md-2 col-s-12">
+          <label class="inputLable" for="inputEmail4">Delivary Note</label>
+        </div>
+        <div class=" col-md-10 col-s-12">
+          <input type="text" disabled="true" [(ngModel)]="note" style= "background-color: white;" class="form-control" name="productName" id="productName">
+        </div>
+    
+      </div>
+    
+    
+    </div>
+
+    <h1 class="mt-4"> Cost Breakdown Summary</h1>
+
+    <div class="table-responsive">
+        <table class="table mt-3  overflow-auto">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ref</th>
+                <th scope="col"></th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Agreed Items Total</td>
+                <td></td>
+                <td><input type="text" disabled="true" [(ngModel)]="initialItemsTotal" style= "background-color: white;" class="form-control" name="productName" id="productName"></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Additional Charges</td>
+                <td>(+)</td>
+                <td><input type="text" disabled="true" [(ngModel)]="chargesTotal" style= "background-color: white;" class="form-control" name="productName" id="productName"></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Deductions/Discounts</td>
+                <td>(-)</td>
+                <td><input type="text" disabled="true" [(ngModel)]="deductionsTotal" style= "background-color: white;" class="form-control" name="productName" id="productName"></td>
+              </tr>
+              <tr  >
+                <th scope="row"></th>
+                <td style= "background-color: greenyellow;font-weight: bold;">Agreed Total</td>
+                <td style= "background-color: greenyellow;font-weight: bold;"></td>
+                <td style= "background-color: greenyellow;font-weight: bold;"><input type="text" disabled="true" [(ngModel)]="orderTotal"  style= "background-color: greenyellow;font-weight: bold;"  class="form-control" name="productName" id="productName"></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Suggested Items Total</td>
+                <td>(+)</td>
+                <td><input type="text" disabled="true" [(ngModel)]="suggestedItemsTotal" style= "background-color: white;" class="form-control" name="productName" id="productName"></td>
+              </tr>
+              <tr >
+                <th scope="row"></th>
+                <td style= "background-color: yellow;font-weight: bold;"  >Pending Total</td>
+                <td style= "background-color: yellow;font-weight: bold;"  ></td>
+                <td style= "background-color: yellow;font-weight: bold;"  ><input type="text" disabled="true" [(ngModel)]="predictedTotal" style= "background-color: yellow;font-weight: bold;"    class="form-control" name="productName" id="productName"></td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+
+    </div>

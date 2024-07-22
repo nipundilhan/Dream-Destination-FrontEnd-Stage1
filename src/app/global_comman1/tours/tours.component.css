@@ -1,0 +1,38 @@
+.course
+{
+    /*background-color: whitesmoke;*/
+    background-color: lightgray;
+    padding: 10px 25px;
+}
+.box
+{
+    background-color: whitesmoke;
+    padding: 10px 20px;
+}
+
+/*
+@media screen and (max-width:600px)
+{
+    .course
+{
+    background-color: #eff6ff;
+    padding: 50px 10px;
+}
+}
+
+
+.nonResp
+{
+
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width : 600px)
+{
+  .nonResp > .row {
+    overflow-x: auto;
+  }
+}
+*/
+

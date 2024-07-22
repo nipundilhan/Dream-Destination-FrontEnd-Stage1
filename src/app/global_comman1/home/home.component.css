@@ -1,0 +1,133 @@
+.home img
+{
+    width: 100%;
+    height: 1100px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.homecontent
+{
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%,-50%);
+}
+.homecontent h1
+{
+    color: #ffffff;
+    font-size: 50px;
+}
+.homecontent a
+{
+    margin-top: 10px;
+}
+
+@media screen and (max-width:600px)
+{
+    .home img
+{
+    height: 700px;
+}
+    .homecontent h1
+{
+    font-size: 40px;        
+}
+}
+
+
+.course
+{
+    background-color: lightgrey;
+    padding: 10px 27px;
+}
+.box
+{
+    background-color: #ffffff;
+    padding: 10px 16px;
+}
+
+@media only screen and (max-width:1250px) 
+{
+img.img1
+{
+    width: 180px;
+    height: 140px;
+}
+img.img2
+{
+    width: 350px;
+    height: 225px;
+}
+}
+
+
+
+
+
+@media only screen and (max-width:780px) 
+{
+img.img1
+{
+    width: 240px;
+    height: 200px;
+}
+img.img2
+{
+    width: 400px;
+    height: 240px;
+}
+}
+
+@media only screen and (max-width:400px) 
+{
+img.img1
+{
+    width: 160px;
+    height: 120px;
+}
+img.img2
+{
+    width: 290px;
+    height: 180px;
+}
+}
+
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    margin-top: 50px;
+  }
+  .service-title {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+  }
+  .service-list {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+  }
+  .service-list li {
+    margin-bottom: 10px;
+  }
+
+
+  .background-container {
+    background-image: url(../../../assets/c1.jpg); /* Set your background image URL here */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+
+  }
+  
+  @media (max-width: 780px) {
+    .background-container {
+      /*
+      background-color: black;
+      background-image: none;  Adjust height for screens smaller than 800px */
+      background-position: center; 
+    }
+  }

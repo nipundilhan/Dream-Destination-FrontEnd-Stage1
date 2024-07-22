@@ -1,0 +1,35 @@
+.pg {
+    
+    background: lightgray ;
+    
+    /*
+    background: sprindarggreen ;
+    height: 1250px; */
+
+
+}
+
+
+.sdNav {
+    background: grey ;
+    /*height: 1250px;     height: 125vh; */
+
+}
+
+/*
+@media screen and (max-width:600px)
+{
+    .pg
+{
+
+   
+
+    background-color: yellow;
+    width: 1000px;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+
+}
+}
+*/

@@ -1,0 +1,55 @@
+<div class=" mt-2 ml-3 col-11  " >
+    <div class=" d-flex justify-content-center align-items-center ">
+    <div *ngIf="lnght <= 0" style="background-color: springgreen;text-align:center; padding-top:100px; padding-left:50px; padding-right:50px;   height: 400px;font-size: 27px; ">
+        <h1 class="mt-2 ml-2"  > No Cart Items to display , please add products from product page</h1>
+    </div>
+    </div>
+    <div *ngIf="lnght > 0">
+
+        <h2 class="text-center " style="font-weight: bold;margin-top: 5px;"> Cart Items </h2>
+        
+        <div>
+
+            <div class="container" *ngFor="let p of productSlice">
+                <div class="row mt-2 mb-2 pt-2 pb-2" style="background-color: whitesmoke;">
+                    <div class=" col-lg-3 col-md-6 col-s-12">
+                        <p style="font-size:16px;font-weight: bold;">{{p.productName}}</p>
+                        <p class=" text-truncate"> {{p.description}}</p>
+                    </div>
+                    <div class=" col-lg-3 col-md-6 col-sm-4"> <img class="mt-1 mb-1" [src]="p.productImages[0].url"
+                            width="160px" height="120px;" alt=""> </div>
+                    <div class=" col-lg-3 col-md-6 col-sm-4 d-flex justify-content-end align-items-center">
+                        <p style="font-size:16px;font-weight: bold;">{{p.productActualPrice}} NZD</p>
+                    </div>
+                    <div class=" col-lg-3 col-md-6 col-sm-4 d-flex justify-content-end align-items-center mb-1"> <button
+                            class="btn btn-danger  " (click)="remove(p)"> Remove</button></div>
+                </div>
+            </div>
+
+            <mat-paginator class="mt-2 mb-2 "  style="font-size: 18px;" [length]="lnght" [pageSize]="4" [pageSizeOptions]="[4,5]"
+                (page)="onPageChange($event)" aria-label="Select page">
+            </mat-paginator>
+
+        </div>
+
+        <div class="container">
+            <div class="row mb-3">
+                <div class=" col-lg-3 col-s-12">
+                    <p style="font-size: 16px;" > to select item quantities, press Next button</p>
+                </div>
+                <div class=" col-lg-3 col-s-12"></div>
+                <div class=" col-lg-3 col-s-12"></div>
+                <div class=" col-lg-3 col-s-12 d-flex justify-content-end">
+                    <button *ngIf="showNextButton()" class="btn btn-success " color="primary" (click)="checkOut()">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>

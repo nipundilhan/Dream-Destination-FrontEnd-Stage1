@@ -1,0 +1,33 @@
+<div class="container mt-5" style="padding-top: 80px;padding-bottom: 180px;margin-top: 40px;">
+
+    
+    <p style="text-align:left;color: black;font-weight: bold;"> Default users - for testing (Try them) </p>
+    <ul class="list-unstyled" style="text-align:left;right: black;font-weight: bold;">
+        <li>      : UserName-&nbsp; hiranya &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Password-&nbsp; hiranya &nbsp;&nbsp;&nbsp;&nbsp;   Role-&nbsp;Admin</li>
+        <li>      : UserName-&nbsp; anupama &nbsp;   Password-&nbsp; anumapa &nbsp;   Role-&nbsp;user</li>
+    
+      </ul>
+    <div class="card" style="padding: 20px;">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <input type="text"
+            ngModel
+            name="username"
+            id="username"
+            placeholder="Enter your username"
+            class="form-control mb-3"
+            >
+
+            <input type="password"
+            ngModel
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            class="form-control mb-3"
+            >
+
+            <input type="submit"
+            value="Login"
+            class="btn btn-outline-primary form-control rounded-0">
+        </form>
+    </div>
+</div>

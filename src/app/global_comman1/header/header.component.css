@@ -1,0 +1,121 @@
+.navbar
+{
+    background-color:midnightblue;
+}
+
+.nav-item:hover{
+    background-color:royalblue;
+}
+
+
+.navbar-light .navbar-nav .nav-link
+{
+    color: white;
+    font-size: 18px;
+    margin-right:1%;
+}
+
+.navbar-light .navbar-nav .nav-link:hover
+{
+    text-decoration: solid;
+    font-weight: bold;   
+    font-size: 18px;
+    
+}
+
+.navbar-brand{
+    font-size: 24px;
+    margin-left:1%;
+    margin-top:0.5vh;
+    font-weight: bold;
+    color: white;   
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+.btn-d{
+    margin-top:0.5vh;
+    font-weight: bold;
+}
+
+.nav-link{
+    margin-left:10px;
+}
+
+.navbar-light .navbar-toggler-icon {
+    /*background-color: white;*/
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .navbar .navbar-toggler {
+    margin-right: 2px !important;
+  }
+  
+  .navbar-toggler:focus,
+  .navbar-toggler:active {
+    margin-right: 2px !important;
+    outline: 2px solid white !important; /* Ensure specificity and use !important */
+  }
+  
+
+
+  .navbar-light .navbar-toggler-icon:hover{
+    color: white; /* Change to your desired color */
+  }
+
+@media screen and (max-width:600px)
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-s{
+
+    margin-top:2vh;
+    font-size: 0.8vw;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-color: green;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    /*
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;*/
+
+
+}
+.btn-s:hover {
+    background-color: darkgreen;
+}
+
+.btn-scnd:hover {
+    background-color: DarkSlateGray;
+    color: white;
+}

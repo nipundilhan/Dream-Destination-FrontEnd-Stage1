@@ -1,0 +1,55 @@
+.p1dv1{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left:4%;
+    margin-right:4%;
+    margin-top:2%;
+    background-color: whitesmoke;
+  }
+  
+  .inputLable{
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+
+  table {
+    width: 100%;
+}
+
+.mat-row:hover>.mat-cell {
+    background-color: lightgray;
+}
+
+.mat-row:nth-child(even) {
+    background-color: WhiteSmoke;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: white;
+}
+
+.mat-header-cell {
+    background-color: DarkSeaGreen;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.mat-cell {
+    font-size: 16px;
+}
+ 
+.mat-paginator {
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.nonAvailableRowColour{
+    background-color: yellow
+  }

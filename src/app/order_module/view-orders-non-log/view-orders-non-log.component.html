@@ -1,0 +1,88 @@
+
+<h2 class="text-center " style="font-weight: bold;margin-top: 10px;"> Track your orders </h2>
+
+<div class="p1dv1 col-11 ">
+
+    
+
+    <div class="row">
+      <div class="col-md-12 ">
+          <div class="row">
+  
+              <div class="form-group col-md-2 col-s-12 d-flex justify-content-start align-items-center">
+                  <label class="inputLable  " for="inputDescription">Email</label>
+              </div>
+              <div class="form-group col-md-6 col-s-12">
+                <input type="text" maxlength="99"   [(ngModel)]="email" class="form-control" id="description" placeholder="enter the email">
+
+              </div>
+              <div class="form-group col-md-4 col-s-12 d-flex justify-content-end align-items-center" > 
+                <button class="btn-danger btn  btn-sm " style="font-size: 20px;" mat-icon-button color="primary" (click)="reset()" >
+                    Reset
+                 </button>
+               <button class="btn-success btn btn-sm ml-3 " style="font-size: 20px;" mat-icon-button color="primary" (click)="search()" >
+                   Search
+                </button>
+            </div>
+  
+  
+          </div>
+  
+      </div>
+   
+  </div>
+
+
+
+
+  
+  
+  
+  
+  
+  </div>
+
+  <div class="col-md-12 table-responsive  mt-5">
+
+    <table class="table table-striped table-hover">
+        <thead class="thead thead-dark">
+            <tr>
+                <th class="d-none d-lg-block" scope="col">Order Id</th>
+                <th scope="col">Delivary Name</th>
+                <th class="d-none d-lg-block" scope="col">Email</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+            <tr *ngFor="let order of orderDetailsList">
+                
+                <td class="d-none d-lg-block">{{order.id}}</td>
+                <td>{{order.delivaryName}}</td>
+                <td class="d-none d-lg-block" >{{order.email}}</td>
+                <td>{{order.orderDate}}</td>
+                <td>{{order.status}}</td>
+                <td>                
+                    <button type="button" *ngIf="order.id" class="btn btn-primary" (click)="editProduct(order.id)"> View
+                    </button>
+                </td>
+
+            </tr>
+        </tbody>
+
+
+
+    </table>
+
+
+    <mat-paginator class="mt-2 mb-5" [length]="lnght"
+    [pageSize]="8"
+    [pageSizeOptions]="[5,10]"
+    (page)="onPageChange($event)"
+    aria-label="Select page">
+    </mat-paginator>
+
+</div>

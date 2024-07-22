@@ -1,0 +1,446 @@
+<!--<div class="sideNav-parent overflow-auto">  overflow-auto makes the sidenave scrollable-->
+<div class="sideNav-parent ">
+    <div class="sideNav-child1 d-none d-md-block" >
+
+
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            
+            <li class="nav-item itm col-12  align-self-end" >
+                
+                <a routerLink="/home" class="lnk nav-link  px-0 text-truncate"  >
+                    
+                    <mat-icon style="color:white;" >home</mat-icon>
+                    <span class="ittxt ">HOME  PAGE</span>
+
+                </a>
+                
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a routerLink="/test-staff" class="lnk nav-link  px-0 text-truncate">
+                    <mat-icon style="color:white;" >group</mat-icon>
+                    <span class="ittxt">STAFF  PAGE</span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a routerLink="/tours" class="lnk nav-link  px-0 text-truncate">
+                    <mat-icon style="color:white;" >photo_library</mat-icon>
+                    <span class="ittxt" >DESTINATIONS</span>
+                </a>
+            </li>
+
+
+        </ul>
+        <ul class="nav nav-pills=" id="menu22" *ngIf="userService.roleMatch(['ADMIN'])">
+
+            <li class=" itm2 col-12 ">
+                
+                <a href="#submenu22" data-bs-toggle="collapse" class="nav-link px-0  col-12">
+                    
+
+                    <mat-icon style="color:white;" >menu</mat-icon>
+                    <span class="  ittxt2">TEST</span>  </a>
+                <!--show-->
+                <ul class="collapse  nav  nav-pills " id="submenu22" data-bs-parent="#menu22">
+                    <li class="w-100 itm4  px-0  col-12 " >
+                        <a routerLink="/calender-view" class="nav-link  px-0  col-12">
+                            <span class="d-none d-sm-inline itsbtxt">Destinations Calender</span>  </a>
+                    </li>
+                    <li class="w-100 itm4 " >
+                        <a routerLink="/test-customer" class="nav-link  px-0">
+                            <span class="d-none d-sm-inline itsbtxt">View My Orders</span> </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul 
+            class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu1">
+            <li class=" itm2 col-12 ">
+                
+                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle col-12  text-truncate">
+                    
+                    <i class="fs-4 bi-speedometer2 ittxt2"></i>
+                    <mat-icon style="color:white;" >menu</mat-icon>
+                    <span class="ms-1 d-none d-sm-inline ittxt2">SHOP STAFF</span> </a>
+                <!--show-->
+                <ul class="collapse  nav flex-column " id="submenu1" data-bs-parent="#menu1">
+                    <li class="w-100 itm4  align-self-end" >
+                        <a routerLink="/shop-owner-view-orders" class="nav-link  px-0 "  > 
+                            <span  class="d-none d-sm-inline itsbtxt">ALL Orders</span>  </a>
+                    </li>  
+                    <li class="w-100 itm4  align-self-end" >
+                        <a routerLink="/unread-messages" class="nav-link  px-0 "  > 
+                            <span  class="d-none d-sm-inline itsbtxt">Unread Messages</span>  </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul *ngIf="userService.roleMatch(['ADMIN'])"
+            class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu2">
+            <li class=" itm2 col-12 ">
+                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle col-12  text-truncate">
+                    <mat-icon style="color:white;" >menu</mat-icon>
+                    <i class="fs-4 bi-speedometer2 ittxt2"></i>
+                    <span class="ms-1 d-none d-sm-inline ittxt2">SHOP OWNER</span> </a>
+                <!--show  *ngIf="permissionMatch(['CRT_CSTMR'])  VW_CSTMR  VW_CSTMRS  VW_ORDRS"-->
+                <ul class="collapse  col-12  nav flex-column ms-1 " id="submenu2" data-bs-parent="#menu2">
+                    <li  class="w-100 itm4  align-self-end" >
+                        <a routerLink="/create-product" class="nav-link  px-0 "  > 
+                            <span  class="d-none d-sm-inline itsbtxt">Create Product</span>  </a>
+                    </li>
+                    <li class="w-100 itm4  align-self-end" >
+                        <a routerLink="/view-products" class="nav-link  px-0 "  > 
+                            <span  class="d-none d-sm-inline itsbtxt">View Products</span>  </a>
+                    </li>
+                    <li class="w-100 itm4  align-self-end" >
+                        <a routerLink="/shop-owner-view-orders" class="nav-link  px-0 "  > 
+                            <span  class="d-none d-sm-inline itsbtxt">ALL Orders</span>  </a>
+                    </li>  
+                    <li class="w-100 itm4  align-self-end" >
+                        <a routerLink="/unread-messages" class="nav-link  px-0 "  > 
+                            <span  class="d-none d-sm-inline itsbtxt">Unread Messages</span>  </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu3">
+            <li class="nav-item itm col-12 align-self-end">
+                <a routerLink="/view-products-non-log" class="nav-link  px-0 text-truncate">
+                    <mat-icon style="color:white;" >collections_bookmark</mat-icon>
+                    
+                    <span class="ittxt">FIND PRODUCTS</span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a routerLink="/settings" class="nav-link px-0 text-truncate">
+                    <mat-icon style="color:white;" >settings</mat-icon>
+                    
+                    <span class="ittxt">SETTINGS</span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a routerLink="/forbidden" class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li>
+            <li class="nav-item itm col-12 align-self-end">
+                <a class="nav-link  px-0">
+                    <i class="fs-4 bi-house"></i>
+                    
+                    <span class="ittxt"></span>
+                </a>
+            </li> 
+
+
+
+
+
+        </ul>
+
+
+
+        <hr>
+    </div>
+
+
+
+
+
+    <div class="sideNav-child1 d-md-none" >
+
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu3">
+
+            <li class="nav-item mitm col-12 align-self-end" data-toggle="tooltip" data-placement="right" title="View Products" >
+                <a routerLink="/view-products" class="nav-link  px-0">
+                    <mat-icon style="color:white;font-size: x-large;" >people_outline</mat-icon>                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end" data-toggle="tooltip" data-placement="right" title="Create Product">
+                <a routerLink="/create-product"  class="nav-link  px-0">
+                    <!--please double-check your app.module.ts file. Make sure that your imports: [...] array includes MatTooltipModule,-->
+                    <mat-icon  style="color:white;font-size: x-large;" >photo_library</mat-icon>
+                    
+                    
+                </a>
+            </li>
+            <li *ngIf="userService.roleMatch(['ADMIN'])" class="nav-item mitm col-12 align-self-end" data-toggle="tooltip" data-placement="right" title="View orders">
+                <a routerLink="/shop-owner-view-orders" class="nav-link  px-0">
+                    <mat-icon  style="color:white;font-size: x-large;" >collections_bookmark</mat-icon>   
+                </a>
+            </li>
+            <li *ngIf="userService.roleMatch(['ADMIN'])"  class="nav-item mitm col-12 align-self-end" data-toggle="tooltip" data-placement="right" title="Unread Messages">
+                <a routerLink="/unread-messages" class="nav-link  px-0">
+                    <mat-icon style="color:white;font-size: x-large;" >group</mat-icon>   
+                </a>
+            </li>
+            <li   class="nav-item mitm col-12 align-self-end" data-toggle="tooltip" data-placement="right" title="Settings">
+                <a routerLink="/settings" class="nav-link  px-0">
+                    <mat-icon style="color:white;font-size: x-large;" >settings</mat-icon>   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                      
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                     
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                     
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                     
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                     
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                    
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                    
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                     
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                    
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                     
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                     
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+            <li class="nav-item mitm col-12 align-self-end">
+                <a routerLink="/yellow-page" class="nav-link  px-0">
+                   
+                </a>
+            </li>
+
+
+
+
+        </ul>
+
+
+
+        <hr>
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+
+<div style=" text-align: right;border: 0;" >
+    <button  (click)="closeDialog()">Close</button>
+</div>
+
+<div  class="mt-3">
+<mat-grid-list cols="2" rowHeight="1:1">
+    <div>
+        <mat-grid-tile *ngFor="let fileHandle of data.images " style="margin-top: 10px;">
+            <img [src]="fileHandle.url" width="150px" height="150px" >
+        </mat-grid-tile>
+    </div>
+
+</mat-grid-list>  
+</div>  -
+<div class="mt-3">
+    <p>{{data.description}}</p>
+</div>

@@ -1,0 +1,82 @@
+.p1dv1{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-left:4%;
+    margin-top:10px;
+    background-color: whitesmoke;
+}
+
+.inputLable{
+    font-weight: bold;
+}
+
+mat-grid-tile {
+    background: lightblue;
+}
+
+.btn-remove-image{
+    position :absolute;
+    cursor: pointer;
+    top:-10px;
+    right:-10px;
+    background-color: red;
+    color:white;
+    border-radius: 50%;
+    width:20px;
+    height:auto;
+    text-align:center;
+}
+
+
+
+
+
+table {
+    width: 100%;
+}
+
+.mat-row:hover>.mat-cell {
+    background-color: lightgray;
+}
+
+.mat-row:nth-child(even) {
+    background-color: WhiteSmoke;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: white;
+}
+
+.mat-header-cell {
+    background-color: DarkSeaGreen;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.mat-cell {
+    font-size: 16px;
+    text-align: center;
+}
+ 
+.mat-paginator {
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+  }
+
+  label{
+    font-size: 16px;
+    font-weight: bold;
+  }

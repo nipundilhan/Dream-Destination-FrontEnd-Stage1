@@ -1,0 +1,145 @@
+<div>
+  <h2  class="mt-3"  style="font-weight: bold;margin-left:575px;">All orders</h2>
+</div>
+
+<div class="p1dv1 col-11">
+<form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="ordrSrchRq.email" [ngModelOptions]="{standalone: true}"  id="inputEmail4" placeholder="Email">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Contact No</label>
+        <input type="text" class="form-control" [(ngModel)]="ordrSrchRq.contactNo"  [ngModelOptions]="{standalone: true}"  id="inputPassword4" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-row">
+      
+        <div class="form-group col-md-2">
+            <label class="inputLable" for="inputArea">From Date</label>
+        </div>
+        <div class="form-group col-md-4">
+            <mat-form-field  class="d-flex justify-content-end align-items-top">
+                <input  name="dateSelected4" [(ngModel)]="fromDate" [ngModelOptions]="{standalone: true}"  [max]="maxDate" style="color:black;" (dateInput)="chngEvent('input', $event)" (dateChange)="chngEvent('change', $event)"
+                     matInput [matDatepicker]="picker"  disabled>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker  #picker disabled="false"  ></mat-datepicker> <!--startView="year" or startView="multiYear"-->
+            </mat-form-field>
+
+
+        </div>
+        <div class="form-group col-md-2">
+            <label class="inputLable" for="inputZipCode">To Date</label>
+        </div>
+        <div class="form-group col-md-4">
+
+            <mat-form-field >
+                <input  name="dateSelected4" [(ngModel)]="toDate" [ngModelOptions]="{standalone: true}"   style="color:black;" 
+                     matInput [matDatepicker]="dp6"  [min]="minDate" disabled>
+                <mat-datepicker-toggle matIconSuffix [for]="dp6"></mat-datepicker-toggle>
+                <mat-datepicker  #dp6 disabled="false"  ></mat-datepicker> <!--startView="year" or startView="multiYear"-->
+            </mat-form-field>
+
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputState">Order Status</label>
+            <select id="inputState"  class="form-control" [(ngModel)]="ordrSrchRq.status" [ngModelOptions]="{standalone: true}" >
+              <option >ALL...</option>
+              <option selected value="PENDING">PENDING</option>
+              <option value="INPROGRESS">INPROGRESS</option>
+              <option value="DELIVERD">DELIVERD</option>
+              
+            </select>
+        </div>
+        <div class="form-group col-md-6 d-flex justify-content-end align-items-center ">
+            <button type="submit" class="btn btn-danger mt-4 mr-2" (click)="reset()">Reset</button>
+            <button type="submit" class="btn btn-primary mt-4" (click)="search()">Search</button>
+        </div>
+      </div>
+
+    
+  </form>
+
+
+  <div>
+    <div>
+
+        <!--- 
+                   //early code     
+                    [dataSource]="productDataSource
+        -->
+  
+      <table mat-table [dataSource]="orderDataSource.items" class="mat-elevation-z8">
+  
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+        
+          <!-- Position Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="orderName">
+            <th mat-header-cell *matHeaderCellDef> Order Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.delivaryName}} </td>
+          </ng-container>
+        
+          <!-- Weight Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+        
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="contact">
+            <th mat-header-cell *matHeaderCellDef> Contact </th>
+            <td mat-cell *matCellDef="let element"> {{element.contactNo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> date </th>
+            <td mat-cell *matCellDef="let element"> {{element.orderDate | date:'medium'}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> status </th>
+            <td mat-cell *matCellDef="let element"  [style.background-color]="(element.status==='PENDING') ? 'yellow' : (element.status==='DELIVERED') ? 'green' : 'red'"> {{element.status}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef > Actions </th>
+            <td mat-cell *matCellDef="let element"  > 
+                <button mat-icon-button class="btn btn-primary" (click)="editOrder(element.id)"> Action</button>
+            </td>
+        </ng-container>
+  
+          
+  
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+  
+        <mat-paginator
+        [length]="orderDataSource.meta.totalItems" 
+        
+        (page)="onPaginateChange($event)"
+  
+         [pageSizeOptions]="[10,25]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements">
+      </mat-paginator>
+  
+      </div>
+  </div>
+
+
+
+
+
+</div>

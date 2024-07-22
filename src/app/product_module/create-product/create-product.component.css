@@ -1,0 +1,31 @@
+.p1dv1{
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left:4%;
+    margin-top:1%;
+    background-color: whitesmoke;
+}
+
+.inputLable{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+mat-grid-tile {
+    background: lightblue;
+}
+
+.btn-remove-image{
+    position :absolute;
+    cursor: pointer;
+    top:-10px;
+    right:-10px;
+    background-color: red;
+    color:white;
+    border-radius: 50%;
+    width:20px;
+    height:auto;
+    text-align:center;
+}
